@@ -15,8 +15,18 @@ defmodule ShoppingList.User do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:email, :password_hash])
-    |> validate_required([:email, :password_hash])
+    |> cast(params, [:email, :password])
+    |> validate_required([:email])
     |> Validator.validate_email(:email)
+    |> put_password_hash()
+  end
+
+  defp put_password_hash(changeset) do
+    case changeset do
+      %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
+        put_change(changeset, :password_hash,
+         Comeonin.Bcrypt.hashpwsalt(pass))
+      _ -> changeset
+    end
   end
 end

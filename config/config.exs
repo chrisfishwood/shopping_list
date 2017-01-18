@@ -35,7 +35,7 @@ config :guardian, Guardian,
   ttl: { 30, :days },
   allowed_drift: 2000,
   verify_issuer: true,
-  secret_key: {MySecretKey, :fetch},
+  #secret_key: {MySecretKey, :fetch},
   secret_key: %{
     "crv" => "P-521",
     "d" => "axDuTtGavPjnhlfnYAwkHa4qyfz2fdseppXEzmKpQyY0xd3bGpYLEF4ognDpRJm5IRaM31Id2NfEtDFw4iTbDSE",

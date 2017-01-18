@@ -2,7 +2,8 @@ defmodule ShoppingList.UserControllerTest do
   use ShoppingList.ConnCase
 
   alias ShoppingList.User
-  @valid_attrs %{email: "chrisfishwood@gmail.com", password_hash: "some content"}
+  @valid_attrs_virtual %{email: "chrisfishwood@gmail.com", password: "somepassword"}
+  @valid_attrs %{email: "chrisfishwood@gmail.com"}
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do
@@ -16,7 +17,7 @@ defmodule ShoppingList.UserControllerTest do
   end
 
   test "creates resource and redirects when data is valid", %{conn: conn} do
-    conn = post conn, user_path(conn, :create), user: @valid_attrs
+    conn = post conn, user_path(conn, :create), user: @valid_attrs_virtual
     assert redirected_to(conn) == user_path(conn, :index)
     assert Repo.get_by(User, @valid_attrs)
   end
@@ -46,7 +47,7 @@ defmodule ShoppingList.UserControllerTest do
 
   test "updates chosen resource and redirects when data is valid", %{conn: conn} do
     user = Repo.insert! %User{}
-    conn = put conn, user_path(conn, :update, user), user: @valid_attrs
+    conn = put conn, user_path(conn, :update, user), user: @valid_attrs_virtual
     assert redirected_to(conn) == user_path(conn, :show, user)
     assert Repo.get_by(User, @valid_attrs)
   end

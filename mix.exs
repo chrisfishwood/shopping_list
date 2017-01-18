@@ -19,7 +19,7 @@ defmodule ShoppingList.Mixfile do
   def application do
     [mod: {ShoppingList, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,6 +39,7 @@ defmodule ShoppingList.Mixfile do
      {:guardian, "~> 0.14"},
      {:gettext, "~> 0.11"},
      {:validator, "~> 0.3.0"},
+     {:comeonin, "~> 3.0"},
      {:cowboy, "~> 1.0"}]
   end
 
