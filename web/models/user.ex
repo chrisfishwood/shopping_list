@@ -1,7 +1,7 @@
 defmodule ShoppingList.User do
   require Validator
   use ShoppingList.Web, :model
-
+  require IEx
   schema "users" do
     field :email, :string
     field :password, :string, virtual: true
@@ -22,6 +22,7 @@ defmodule ShoppingList.User do
   end
 
   defp put_password_hash(changeset) do
+    IEx.pry
     case changeset do
       %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
         put_change(changeset, :password_hash,

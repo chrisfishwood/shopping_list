@@ -55,6 +55,7 @@ defmodule ShoppingList.Web do
       import ShoppingList.Router.Helpers
       import ShoppingList.ErrorHelpers
       import ShoppingList.Gettext
+      import ShoppingList.ViewHelper
     end
   end
 

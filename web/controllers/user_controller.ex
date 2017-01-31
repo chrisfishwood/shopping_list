@@ -17,8 +17,9 @@ defmodule ShoppingList.UserController do
     changeset = User.changeset(%User{}, user_params)
 
     case Repo.insert(changeset) do
-      {:ok, _user} ->
+      {:ok, user} ->
         conn
+        |> ShoppingList.Auth.login(user)
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: user_path(conn, :index))
       {:error, changeset} ->
@@ -59,6 +60,7 @@ defmodule ShoppingList.UserController do
     Repo.delete!(user)
 
     conn
+    |> Guardian.Plug.sign_out
     |> put_flash(:info, "User deleted successfully.")
     |> redirect(to: user_path(conn, :index))
   end
