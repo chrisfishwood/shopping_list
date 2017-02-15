@@ -1,3 +1,3 @@
-defmodule ShoppingList.Repo do
+defmodule AuthExample.Repo do
   use Ecto.Repo, otp_app: :shopping_list
 end

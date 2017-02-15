@@ -1,12 +1,12 @@
-defmodule ShoppingList.SessionController do
-  use ShoppingList.Web, :controller
+defmodule AuthExample.SessionController do
+  use AuthExample.Web, :controller
 
   def new(conn, _) do
     render conn, "new.html"
   end
 
   def create(conn, %{"session" => %{"email" => user, "password" => pass}}) do
-    case ShoppingList.Auth.login_by_email_and_pass(conn, user, pass, repo: Repo) do
+    case AuthExample.Auth.login_by_email_and_pass(conn, user, pass, repo: Repo) do
       {:ok, conn} ->
         logged_in_user = Guardian.Plug.current_resource(conn)
         conn

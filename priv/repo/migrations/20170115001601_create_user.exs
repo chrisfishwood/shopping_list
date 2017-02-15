@@ -1,4 +1,4 @@
-defmodule ShoppingList.Repo.Migrations.CreateUser do
+defmodule AuthExample.Repo.Migrations.CreateUser do
   use Ecto.Migration
 
   def change do

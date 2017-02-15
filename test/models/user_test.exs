@@ -1,7 +1,7 @@
-defmodule ShoppingList.UserTest do
-  use ShoppingList.ModelCase
+defmodule AuthExample.UserTest do
+  use AuthExample.ModelCase
 
-  alias ShoppingList.User
+  alias AuthExample.User
 
   @valid_attrs_virtual %{email: "chrisfishwood@gmail.com", password: "foo"}
   @valid_attrs %{email: "chrisfishwood@gmail.com"}

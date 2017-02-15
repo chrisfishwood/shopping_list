@@ -1,5 +1,5 @@
-defmodule ShoppingList.Router do
-  use ShoppingList.Web, :router
+defmodule AuthExample.Router do
+  use AuthExample.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,7 +13,7 @@ defmodule ShoppingList.Router do
 
   pipeline :browser_auth do
     plug Guardian.Plug.VerifySession
-    plug Guardian.Plug.EnsureAuthenticated, handler: ShoppingList.Token
+    plug Guardian.Plug.EnsureAuthenticated, handler: AuthExample.Token
     plug Guardian.Plug.LoadResource
   end
 
@@ -21,7 +21,7 @@ defmodule ShoppingList.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ShoppingList do
+  scope "/", AuthExample do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
@@ -30,13 +30,13 @@ defmodule ShoppingList.Router do
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
-  scope "/", ShoppingList do
+  scope "/", AuthExample do
     pipe_through [:browser, :browser_auth]
     resources "/users", UserController, only: [:show, :index, :update, :edit, :delete]
   end
 #
   # Other scopes may use custom stacks.
-  # scope "/api", ShoppingList do
+  # scope "/api", AuthExample do
   #   pipe_through :api
   # end
 end

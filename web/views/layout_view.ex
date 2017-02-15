@@ -1,3 +1,3 @@
-defmodule ShoppingList.LayoutView do
-  use ShoppingList.Web, :view
+defmodule AuthExample.LayoutView do
+  use AuthExample.Web, :view
 end

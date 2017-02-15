@@ -1,7 +1,7 @@
-defmodule ShoppingList.Endpoint do
+defmodule AuthExample.Endpoint do
   use Phoenix.Endpoint, otp_app: :shopping_list
 
-  socket "/socket", ShoppingList.UserSocket
+  socket "/socket", AuthExample.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
@@ -38,5 +38,5 @@ defmodule ShoppingList.Endpoint do
     key: "_shopping_list_key",
     signing_salt: "7rZdLGnl"
 
-  plug ShoppingList.Router
+  plug AuthExample.Router
 end

@@ -1,5 +1,5 @@
-defmodule ShoppingList.Token do
-  use ShoppingList.Web, :controller
+defmodule AuthExample.Token do
+  use AuthExample.Web, :controller
 
   def unauthenticated(conn, _params) do
     conn

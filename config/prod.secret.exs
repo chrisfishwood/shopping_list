@@ -8,11 +8,11 @@ use Mix.Config
 # file or create a script for recreating it, since it's
 # kept out of version control and might be hard to recover
 # or recreate for your teammates (or you later on).
-config :shopping_list, ShoppingList.Endpoint,
+config :shopping_list, AuthExample.Endpoint,
   secret_key_base: "4xFRNb6YVhBqy2NkZtmvmU+hYO2Ewx4wfeukIBKC+hkMGSwmDiUc2u3xlMKoat7Z"
 
 # Configure your database
-config :shopping_list, ShoppingList.Repo,
+config :shopping_list, AuthExample.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",

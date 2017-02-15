@@ -1,4 +1,4 @@
-defmodule ShoppingList.ErrorHelpers do
+defmodule AuthExample.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule ShoppingList.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(ShoppingList.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(AuthExample.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(ShoppingList.Gettext, "errors", msg, opts)
+      Gettext.dgettext(AuthExample.Gettext, "errors", msg, opts)
     end
   end
 end

@@ -1,12 +1,12 @@
-defmodule ShoppingList.Web do
+defmodule AuthExample.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use ShoppingList.Web, :controller
-      use ShoppingList.Web, :view
+      use AuthExample.Web, :controller
+      use AuthExample.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -33,12 +33,12 @@ defmodule ShoppingList.Web do
     quote do
       use Phoenix.Controller
 
-      alias ShoppingList.Repo
+      alias AuthExample.Repo
       import Ecto
       import Ecto.Query
 
-      import ShoppingList.Router.Helpers
-      import ShoppingList.Gettext
+      import AuthExample.Router.Helpers
+      import AuthExample.Gettext
     end
   end
 
@@ -52,10 +52,10 @@ defmodule ShoppingList.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import ShoppingList.Router.Helpers
-      import ShoppingList.ErrorHelpers
-      import ShoppingList.Gettext
-      import ShoppingList.ViewHelper
+      import AuthExample.Router.Helpers
+      import AuthExample.ErrorHelpers
+      import AuthExample.Gettext
+      import AuthExample.ViewHelper
     end
   end
 
@@ -69,10 +69,10 @@ defmodule ShoppingList.Web do
     quote do
       use Phoenix.Channel
 
-      alias ShoppingList.Repo
+      alias AuthExample.Repo
       import Ecto
       import Ecto.Query
-      import ShoppingList.Gettext
+      import AuthExample.Gettext
     end
   end
 

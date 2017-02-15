@@ -1,5 +1,5 @@
-defmodule ShoppingList.PageControllerTest do
-  use ShoppingList.ConnCase
+defmodule AuthExample.PageControllerTest do
+  use AuthExample.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

@@ -1,4 +1,4 @@
-defmodule ShoppingList.Mixfile do
+defmodule AuthExample.Mixfile do
   use Mix.Project
 
   def project do
@@ -17,7 +17,7 @@ defmodule ShoppingList.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {ShoppingList, []},
+    [mod: {AuthExample, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
                     :phoenix_ecto, :postgrex, :comeonin]]
   end

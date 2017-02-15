@@ -1,5 +1,5 @@
-defmodule ShoppingList.PageController do
-  use ShoppingList.Web, :controller
+defmodule AuthExample.PageController do
+  use AuthExample.Web, :controller
 
   def index(conn, _params) do
     render conn, "index.html"

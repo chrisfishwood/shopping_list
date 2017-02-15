@@ -1,3 +1,3 @@
-defmodule ShoppingList.LayoutViewTest do
-  use ShoppingList.ConnCase, async: true
+defmodule AuthExample.LayoutViewTest do
+  use AuthExample.ConnCase, async: true
 end

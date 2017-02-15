@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :shopping_list, ShoppingList.Endpoint,
+config :shopping_list, AuthExample.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,7 +10,7 @@ config :shopping_list, ShoppingList.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :shopping_list, ShoppingList.Repo,
+config :shopping_list, AuthExample.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",

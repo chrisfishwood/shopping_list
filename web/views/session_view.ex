@@ -1,3 +1,3 @@
-defmodule ShoppingList.SessionView do
-  use ShoppingList.Web, :view
+defmodule AuthExample.SessionView do
+  use AuthExample.Web, :view
 end

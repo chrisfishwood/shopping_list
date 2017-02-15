@@ -1,5 +1,5 @@
-defmodule ShoppingList.ErrorView do
-  use ShoppingList.Web, :view
+defmodule AuthExample.ErrorView do
+  use AuthExample.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

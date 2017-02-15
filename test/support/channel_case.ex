@@ -1,4 +1,4 @@
-defmodule ShoppingList.ChannelCase do
+defmodule AuthExample.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,22 +20,22 @@ defmodule ShoppingList.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias ShoppingList.Repo
+      alias AuthExample.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint ShoppingList.Endpoint
+      @endpoint AuthExample.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(ShoppingList.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(AuthExample.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(ShoppingList.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(AuthExample.Repo, {:shared, self()})
     end
 
     :ok

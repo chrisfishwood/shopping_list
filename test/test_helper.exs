@@ -1,4 +1,4 @@
 ExUnit.start
 
-Ecto.Adapters.SQL.Sandbox.mode(ShoppingList.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(AuthExample.Repo, :manual)
 

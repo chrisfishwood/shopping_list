@@ -1,7 +1,7 @@
-defmodule ShoppingList.UserController do
-  use ShoppingList.Web, :controller
+defmodule AuthExample.UserController do
+  use AuthExample.Web, :controller
 
-  alias ShoppingList.User
+  alias AuthExample.User
 
   def index(conn, _params) do
     users = Repo.all(User)
@@ -19,7 +19,7 @@ defmodule ShoppingList.UserController do
     case Repo.insert(changeset) do
       {:ok, user} ->
         conn
-        |> ShoppingList.Auth.login(user)
+        |> AuthExample.Auth.login(user)
         |> put_flash(:info, "User created successfully.")
         |> redirect(to: user_path(conn, :index))
       {:error, changeset} ->

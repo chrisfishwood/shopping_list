@@ -1,7 +1,7 @@
-defmodule ShoppingList.UserControllerTest do
-  use ShoppingList.ConnCase
+defmodule AuthExample.UserControllerTest do
+  use AuthExample.ConnCase
 
-  alias ShoppingList.User
+  alias AuthExample.User
   @valid_attrs_virtual %{email: "chrisfishwood@gmail.com", password: "somepassword"}
   @valid_attrs %{email: "chrisfishwood@gmail.com"}
   @invalid_attrs %{}
