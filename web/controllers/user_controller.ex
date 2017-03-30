@@ -21,7 +21,7 @@ defmodule ShoppingList.UserController do
         conn
         |> ShoppingList.Auth.login(user)
         |> put_flash(:info, "User created successfully.")
-        |> redirect(to: user_path(conn, :index))
+        |> redirect(to: user_path(conn, :show, user))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end

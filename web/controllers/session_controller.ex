@@ -1,5 +1,6 @@
 defmodule ShoppingList.SessionController do
   use ShoppingList.Web, :controller
+  require IEx
 
   def new(conn, _) do
     render conn, "new.html"
@@ -9,6 +10,8 @@ defmodule ShoppingList.SessionController do
     case ShoppingList.Auth.login_by_email_and_pass(conn, user, pass, repo: Repo) do
       {:ok, conn} ->
         logged_in_user = Guardian.Plug.current_resource(conn)
+        IEx.pry
+        IO.inspect conn
         conn
         |> put_flash(:info, "Logged in")
         |> redirect(to: user_path(conn, :show, logged_in_user))

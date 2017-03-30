@@ -29,6 +29,17 @@ defmodule ShoppingList.ConnCase do
 
       # The default endpoint for testing
       @endpoint ShoppingList.Endpoint
+
+      def guardian_login(%ShoppingList.User{} = user), do: guardian_login(build_conn(), user, :token, [])
+      def guardian_login(%Plug.Conn{} = conn, user), do: guardian_login(conn, user, :token, [])
+      def guardian_login(%Plug.Conn{} = conn, user, token, opts) do
+        conn
+          |> bypass_through(ShoppingList.Router, [:browser])
+          |> get("/")
+          |> Guardian.Plug.sign_in(user, token, opts)
+          |> send_resp(200, "Flush the session yo")
+          |> recycle()
+      end
     end
   end
 
@@ -41,4 +52,6 @@ defmodule ShoppingList.ConnCase do
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
+
+
 end
